@@ -1,0 +1,12 @@
+#map-canvas {
+    height: 100%;
+    width: 60%;
+    position: absolute;
+}
+
+#messageList{
+    border: 1px solid black;
+    height: 30%;
+    width: 30%;
+    overflow: scroll;
+}
