@@ -1,5 +1,8 @@
 #Rapport
 
+###Länk till applikation
+<a href="http://martinfohlin.se/1DV449_Laboration3/">Länk till publicerad version</a>
+
 ###Vad finns det för krav du måste anpassa dig efter i de olika API:erna?
 ####SR
 Materialet som tillhandahålls via API får inte användas på ett sådant sätt att det skulle kunna skada Sveriges Radios oberoende eller trovärdighet.
@@ -24,7 +27,8 @@ sådant så kommer min applikation inte att fungera.
 ###Hur har du tänkt kring säkerheten i din applikation?
 Kring säkerheten har jag tänkt som följande, att jag använder textContent när jag lägger ut titlarna till a - taggen för
 den gör allt till text så om det finns en script - tag i titlarna så skrivs det ut `<script>` men den exikveras aldrg.
-Sedan har jag även gjort så att om det man får tillbaka är tomt eller null så skrivs det ut som finns i textfilen.
+Sedan har jag även gjort så att om det man får tillbaka från SR är tomt eller null så skrivs det ut som finns i textfilen
+från föregående hämtning.
 
 ###Hur har du tänkt kring optimeringen i din applikation?
 Optimeringen har jag tänkt på följande att jag använder en minifierad jquery fil och så har jag använt en minifierad
