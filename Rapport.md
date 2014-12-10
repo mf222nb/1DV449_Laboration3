@@ -28,4 +28,5 @@ Sedan har jag även gjort så att om det man får tillbaka är tomt eller null s
 
 ###Hur har du tänkt kring optimeringen i din applikation?
 Optimeringen har jag tänkt på följande att jag använder en minifierad jquery fil och så har jag använt en minifierad
-bootstrap css som då tar ner laddningstiderna en del.
+bootstrap css som då tar ner laddningstiderna en del. Jag har även gjort en minifiering av min egen javascript fil som
+blev stor så att den går snabbare att ladda in.

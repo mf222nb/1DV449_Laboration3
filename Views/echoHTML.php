@@ -35,7 +35,7 @@ class echoHTML{
                     <script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyD0g_j-daef3ACajzaXTPAZ6Lg9xrsQ6-0'></script>
                     <script src='./js/GoogleMap.js'></script>
                     <script src='./js/jquery-1.10.2.min.js'></script>
-                    <script src='./js/TrafficMessages.js'></script>
+                    <script src='./js/TrafficMessage.min.js'></script>
                 </body>
                 </html>";
         return $ret;

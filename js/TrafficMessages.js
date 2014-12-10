@@ -21,31 +21,37 @@ var TrafficMessage = {
             success: function(data){
                 data = JSON.parse(data);
 
-                for (var i = 0; i < data["messages"].length; i++) {
+                var reverseArray = data["messages"].reverse();
+                reverseArray = TrafficMessage.filterUnique(reverseArray);
+                for (var i = 0; i < 100; i++) {
 
-                    if(data["messages"][i].category == 0){
-                        TrafficMessage.roadTrafficArray.push(data["messages"][i]);
+                    if(reverseArray[i].category == 0){
+                        TrafficMessage.roadTrafficArray.push(reverseArray[i]);
                     }
-                    if(data["messages"][i].category == 1){
-                        TrafficMessage.publicTransportArray.push(data["messages"][i]);
-
-                    }
-                    if(data["messages"][i].category == 2){
-                        TrafficMessage.plannedInterferenceArray.push(data["messages"][i]);
+                    if(reverseArray[i].category == 1){
+                        TrafficMessage.publicTransportArray.push(reverseArray[i]);
 
                     }
-                    if(data["messages"][i].category == 3){
-                        TrafficMessage.otherArray.push(data["messages"][i]);
+                    if(reverseArray[i].category == 2){
+                        TrafficMessage.plannedInterferenceArray.push(reverseArray[i]);
+
+                    }
+                    if(reverseArray[i].category == 3){
+                        TrafficMessage.otherArray.push(reverseArray[i]);
                     }
 
-                    TrafficMessage.allMessagesArray.push(data["messages"][i]);
+                    TrafficMessage.allMessagesArray.push(reverseArray[i]);
                 }
-
-                TrafficMessage.allMessagesArray.reverse();
 
                 TrafficMessage.getChosenCategoryMessages();
             }
         })
+    },
+    filterUnique: function (messages){
+    var tempObj = {};
+    return messages.filter(function(value){
+        return tempObj.hasOwnProperty(value.id) ? false : (tempObj[value.id] = true);
+    })
     },
     renderTitle:function(title, id){
         var body = document.getElementById("messageList");
